@@ -1,0 +1,134 @@
+<toaster-container toaster-options="{'time-out': 2000}"></toaster-container>
+<div style="font-family: 'GE Inspira Sans';">
+<div id="spinner" ng-show="loading">
+    <img src="images/loadCar.gif" alt="Loading">
+</div>
+<div class="col-md-12 " ng-hide="loading" style="margin-top: 40px">
+    <div>
+        <form name="regForm">
+            <div class="col-md-12">
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-8 resiterTab ">
+
+                <center>
+                    <h3>Register Yourself!</h3>
+                </center>
+                <hr>
+                <div class="col-md-2">
+                </div>
+
+                <div class="col-md-4">
+                    <table>
+                        <tr>
+                            <label class="control-label">Enter your SSO</label>
+                        </tr>
+                        <tr>
+
+                            <div style="float: right" ng-show="regForm.sso.$touched && regForm.sso.$invalid">
+                                <small>Enter valid sso</small> </div>
+                            <input type="text" class="form-control text4"  numbers-only="" ng-model="var" name="sso" minlength="9" maxlength="9" required>
+                        </tr>
+                        <br>
+                        <tr>
+                            <label class="control-label">First name</label>
+                        </tr>
+
+                        <tr>
+                            <input type="text" class="form-control text4"  ng-pattern ="/^[a-zA-Z\s]*$/" ng-model="fname" required name="fname">
+
+                        </tr>
+                        <br>
+                        <tr>
+                            <label class="control-label">Last name</label>
+                        </tr>
+                        <tr>
+                            <input type="text" class="form-control text4"  required ng-pattern ="/^[a-zA-Z\s]*$/" ng-model="lname" name="lname">
+                        </tr>
+                        <br>
+                        <tr>
+                            <label class="control-label">Contact</label>
+                        </tr>
+                        <tr>
+
+                            <input type="text" class="form-control text4"  numbers-only="" minlength="10" maxlength="10" name="contact" ng-model="cont" required>
+
+                            <div style="float: right" ng-show="regForm.contact.$touched && regForm.contact.$invalid">
+                                <small>Enter valid contact</small>
+                            </div>
+                        </tr>
+                        <br>
+
+                    </table>
+                </div>
+
+                <div class="col-md-4">
+                    <table>
+
+                        <tr>
+                            <label class="control-label">Email</label>
+                        </tr>
+                        <tr>
+                            <div style="float: right" ng-show="regForm.email.$touched && regForm.email.$invalid">
+                                <small>Enter valid EmailID</small>
+                            </div>
+                            <input type="email" class="form-control text4" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" name="email" ng-model="email" required>
+
+                        </tr>
+
+                        <br>
+                        <tr>
+                            <label class="control-label">Password</label>
+                        </tr>
+                        <tr>
+                            <input type="password" class="form-control text4"  name="pass" ng-model="pass" required maxlength="6">
+                            <span ng-show="regForm.pass.$error.required || regForm.pass.$invalid">Maximum 6 characters</span>
+                        </tr>
+                        <br>
+                        <tr>
+
+                            <label class="control-label">Confirm Password</label>
+                        </tr>
+                        <tr>
+                            <input type="password" class="form-control text4"  required  name="cPass" ng-model="cpass" minlength="6">
+                            <span class="Wrong" ng-show="wrong">Password doesn't match!</span>
+                        </tr>
+                        <br>
+                       
+
+                        <br/>
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+
+        <br/>
+        <div class="col-md-12" style="margin-bottom: 10px;">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-2">
+
+            <input type="submit" ng-click="saveClicked(var,fname,lname,email,cont,pass,cpass)" class="btn-pri btn5" value="Register"  ng-disabled="regForm.sso.$invalid || regForm.fname.$invalid || regForm.lname.$invalid || regForm.contact.$invalid|| regForm.pass.$invalid|| regForm.cPass.$invalid || regForm.email.$invalid">
+        
+        </div>
+        <div class="col-md-2">
+            <input type="button" class="btn-pri btn6" value="Cancel" ng-click="cancelClicked()">
+        </div>
+        </form> 
+    </div>
+    
+    <br/>
+    <div class="col-md-12" style="margin-top: 60px;">
+
+      
+
+    </div>
+
+
+</div>
+
+</div>

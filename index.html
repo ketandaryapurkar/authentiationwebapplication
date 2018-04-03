@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="CabApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Cab Service</title>
+    <script src="js/app/angular.js"></script>
+
+    <script src="js/app/angular-sanitize.js"></script>
+    <script src="js/app/ui-bootstrap-tpls-0.6.0.js" type="text/javascript"></script>
+    <script src="js/app/dialogs.v2.min.js" type="text/javascript"></script>
+
+    <script src="js/app/bower-angular-route-master/angular-route.js"></script>
+
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap/css/bootstrap-theme.css">
+    <link rel="shortcut icon" type="image/x-icon" href="images/GE_Logo_Blue.svg">
+    <script src="js/app/angular-cookies.js"></script>
+    <script src="js/app/node_modules/angular-md5/angular-md5.js"></script>
+    <script src="bower_components/angular-base64/angular-base64.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <script src="js/app/angular-messages.min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    
+    <script src="js/app/angular-aria.min.js"></script>
+    <script src="js/app/angular-animate.min.js"></script>
+    <script src="js/direcrives/toastAlertController.js"></script>
+
+    <script src="js/controllers/captchaController.js"></script>
+    <script src="js/controllers/CabController.js"></script>
+    <script src="js/controllers/login.js"></script>
+    <script src="js/controllers/MainController.js"></script>
+    <script src="js/controllers/register.js"></script>
+    <script src="js/controllers/forgotPass.js"></script>
+    <script src="js/services/cabFactory.js"></script>
+    <script src="js/direcrives/validation.js"></script>
+    <script src="js/direcrives/exportReport.js"></script>
+    <script src="js/web-server.js"></script>
+
+    <link rel="stylesheet" href="css/popUpstyle.css">
+    <link rel="stylesheet" href="css/cabStyles.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="css/forgotPassword.css">
+    <link rel="stylesheet" href="css/toastAlertStyle.css">
+
+
+
+</head>
+
+<body ng-controller="MainController" link="red">
+   <div class="header">
+
+      
+        <div  id="logoLbl" >
+            <label id="logoLblText">Cab Service</label>
+        </div>
+
+        <div id="userSession" style="float: right; padding-right: 5%;padding-top: 1%;" ng-show="loginbtn">
+            <img src="images/user_img.png" style="padding: 0px 5px 0px 5px;">
+            <label style="padding: 0px 5px 0px 5px; color: white">{{SSO}}</label>
+            <img style="padding: 0px 5px 0px 5px;" class="" src="images/logout_img.png" ng-click="logoutClick()">                    
+        </div>       
+    </div>
+
+<!-- header ends -->
+    <div class="container"  ng-view>
+    </div>
+
+<!-- main view ends here -->
+<!-- footer starts -->
+   
+</body>
+</html>

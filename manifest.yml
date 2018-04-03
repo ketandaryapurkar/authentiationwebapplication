@@ -1,0 +1,6 @@
+---
+applications:
+  - name: MTC_CabBooking
+    buildpack: https://github.com/cloudfoundry/buildpack-nodejs.git
+    memory: 1G
+    command: node startUser.js

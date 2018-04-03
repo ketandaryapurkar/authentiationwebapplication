@@ -1,0 +1,21 @@
+<div class="modal fade  in" ng-class="{in: animate}" ng-style="{'z-index': 1050 + index*10}" ng-transclude="" modal-window="" index="0" style="z-index: 1050;">
+   <div class="modal ng-scope" id="errorModal" role="dialog" aria-labelledby="errorModalLabel">
+      <div class="modal-dialog">
+         <div class="modal-content">
+            <div class="modal-header dialog-header-confirm">
+               <button type="button" class="close" ng-click="close()">×</button>
+               <h4 class="modal-title text-danger"><span class="glyphicon glyphicon-check"></span> Enter Captcha</h4>
+            </div>
+            <div class="modal-body">
+                <img ng-src="data:image/png;base64,{{captcha.image}}"/>
+                <input type="image" src="images/refresh1.png" ng-click="refreshCaptcha()" alt="Refresh" width="18" height="18">
+                <input type="text" class="form-control" style="width: 250px;" numbers-only="" name="captchaCode" ng-model="captchaCode" placeholder="Enter the Captcha">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" ng-click="confirm(captchaCode)">Confirm</button>
+                <button type="button" class="btn btn-primary " ng-click="close()">Cancel</button>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
